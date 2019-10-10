@@ -20,14 +20,13 @@ google-deeplink
 	NSArray *googleScs = @[@"google",@"googleapp",@"googlemobileurl",@"google-deeplink"];
 	
 	for (NSString* str in googleScs){
-		if ([[url path] rangeOfString:str].location != NSNotFound) {
+		if ([[url path] localizedCaseInsensitiveContainsString:str]) {
 			return NO;
 		}
 	}
 	
 	
 	
-	%orig;
 	return %orig;
 }
 
